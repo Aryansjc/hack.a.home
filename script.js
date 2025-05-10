@@ -100,4 +100,26 @@ document.addEventListener('DOMContentLoaded', function() {
             toggle.textContent = '−';
         }
     }
+    
+    // Back to top button functionality
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    if (backToTopButton) {
+        // Show button when user scrolls down
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top when clicked
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 }); 
